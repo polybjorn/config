@@ -1,0 +1,45 @@
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias -- -="cd -"
+alias cdc='cd ~/.config'
+alias cdr='cd ~/Dropbox/Repositories'
+alias lsa='ls -la'
+alias week='date +%V'
+
+# Ansible
+alias eans='nvim ~/.config/ansible/ansible.cfg'
+alias ians='nvim ~/.config/ansible/hosts'
+
+# Docker
+alias sdc='sudo docker compose -f ~/.config/'
+
+# Editor
+alias n='nvim'
+alias sn='sudo nvim'
+
+# Jekyll
+alias jup='bundle exec jekyll serve --detach --drafts'
+alias jdown='pkill -f jekyll'
+
+# Shell
+alias ezsh='nvim ~/.config/zsh/.zshrc'
+alias szsh='source ~/.config/zsh/.zshrc'
+
+# SSH
+alias essh='nvim /etc/ssh/sshd_config'
+alias issh='nvim ~/.ssh/config'
+
+# Networking
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
+
+# MacOS
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+alias stfu="osascript -e 'set volume output muted true'"
+alias pumpitup="osascript -e 'set volume output volume 100'"
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
