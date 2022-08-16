@@ -13,7 +13,7 @@ alias eans='nvim ~/.config/ansible/ansible.cfg'
 alias ians='nvim ~/.config/ansible/hosts'
 
 # Docker
-alias sdc='sudo docker compose -f ~/.config/'
+alias sdc='sudo docker compose -f ~/.config/docker/docker-compose.yml'
 
 # Editor
 alias n='nvim'
