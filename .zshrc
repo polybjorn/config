@@ -1,3 +1,4 @@
+# ${XDG_CONFIG_HOME}/zsh/.zshrc
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export HISTFILE=${ZDOTDIR}/.zsh_history
 
