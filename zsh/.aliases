@@ -4,17 +4,18 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias -- -="cd -"
-alias cdc='cd ~/.config'
-alias cdr='cd ~/Dropbox/Repositories'
+alias cdc='cd ${XDG_CONFIG_HOME}'
+alias cdr='cd ${HOME}/Dropbox/Repositories'
 alias lsa='ls -la'
 alias week='date +%V'
 
 # Ansible
-alias eans='nvim ~/.config/ansible/ansible.cfg'
-alias ians='nvim ~/.config/ansible/hosts'
+alias eans='nvim ${XDG_CONFIG_HOME}/ansible/ansible.cfg'
+alias cans='nvim ${XDG_CONFIG_HOME}/ansible/hosts'
 
 # Docker
-alias sdc='sudo docker compose -f ~/.config/docker/docker-compose.yml'
+alias pup='sudo docker compose -f ${REPOSITORIES}/webserver-public/docker-compose.yml'
+alias tup='sudo docker compose -f ${REPOSITORIES}/webserver-tunneled/docker-compose.yml'
 
 # Editor
 alias n='nvim'
@@ -25,12 +26,14 @@ alias jup='bundle exec jekyll serve --detach --drafts'
 alias jdown='pkill -f jekyll'
 
 # Shell
-alias ezsh='nvim ~/.config/zsh/.zshrc'
-alias szsh='source ~/.config/zsh/.zshrc'
+alias azsh=''
+alias ezsh='nvim ${XDG_CONFIG_HOME}/zsh/.zshrc'
+alias szsh='source ${XDG_CONFIG_HOME}/zsh/.zshrc'
 
 # SSH
-alias essh='nvim /etc/ssh/sshd_config'
-alias issh='nvim ~/.ssh/config'
+alias esshd='nvim /etc/ssh/sshd_config'
+alias essh='nvim /etc/ssh/ssh_config'
+alias cssh='nvim ${HOME}/.ssh/config'
 
 # Networking
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
