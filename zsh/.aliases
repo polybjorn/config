@@ -26,7 +26,7 @@ alias jup='bundle exec jekyll serve --detach --drafts'
 alias jdown='pkill -f jekyll'
 
 # Shell
-alias azsh=''
+alias azsh='nvim ${XDG_CONFIG_HOME}/zsh/.aliases'
 alias ezsh='nvim ${XDG_CONFIG_HOME}/zsh/.zshrc'
 alias szsh='source ${XDG_CONFIG_HOME}/zsh/.zshrc'
 

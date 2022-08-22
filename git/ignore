@@ -1,4 +1,5 @@
-# Repository root path
+# ~/.config/git/ignore
+
 # Compiled Python files
 *.pyc
 
