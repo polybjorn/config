@@ -1,0 +1,44 @@
+# zsh-config.yml
+
+- name: Export ZSH configuration files from repository
+  hosts: localhost
+  connection: local
+
+  vars:
+    config_repo: ~/Dropbox/Repositories/config
+    config: ~/.config
+
+  tasks:
+
+    - name: Export ZSH aliases
+      ansible.builtin.copy:
+        src: "{{ config_repo }}/zsh/.aliases"
+        dest: "{{ config }}/zsh/.aliases"
+        owner: bjanda
+        group: staff
+        mode: '0644'
+
+    - name: Export ZSH resources
+      ansible.builtin.copy:
+        src: "{{ config_repo }}/zsh/.zshrc"
+        dest: "{{ config }}/zsh/.zshrc"
+        owner: bjanda
+        group: staff
+        mode: '0644'
+
+    - name: Export ZSH environment
+      become: yes
+      ansible.builtin.copy:
+        src: "{{ config_repo }}/zsh/zshenv"
+        dest: /etc/zshenv
+        owner: root
+        group: wheel
+        mode: '0644'
+
+    - name: Export ZSH plugins
+      ansible.builtin.copy:
+        src: "{{ config_repo }}/zsh/plugins/"
+        dest: "{{ config }}/zsh/plugins/"
+        owner: bjanda
+        group: staff
+        mode: '0644'
