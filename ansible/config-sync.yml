@@ -1,0 +1,17 @@
+# config-sync.yml
+
+- name: copy files to destination
+  hosts: localhost
+  connection: local
+  vars:
+    repositories: ~/Dropbox/Repositories
+    config: ~/.config
+
+  tasks:
+
+    - name: copy src.txt as dest.txt in the same dir 
+      copy:
+        src: "{{ repositories }}"/config/zsh
+        dest: "{{ config }}"/config/zsh
+      tags:
+        - simple_copy

@@ -1,4 +1,4 @@
-# ${XDG_CONFIG_HOME}/.aliases
+# ${XDG_CONFIG_HOME}/zsh/.aliases
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
