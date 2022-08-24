@@ -10,6 +10,14 @@
 
   tasks:
 
+    - name: Export ZSH plugins
+      ansible.builtin.copy:
+        src: "{{ config_repo }}/zsh/plugins/"
+        dest: "{{ config }}/zsh/plugins/"
+        owner: bjanda
+        group: staff
+        mode: '0644'
+
     - name: Export ZSH aliases
       ansible.builtin.copy:
         src: "{{ config_repo }}/zsh/.aliases"
@@ -33,12 +41,4 @@
         dest: /etc/zshenv
         owner: root
         group: wheel
-        mode: '0644'
-
-    - name: Export ZSH plugins
-      ansible.builtin.copy:
-        src: "{{ config_repo }}/zsh/plugins/"
-        dest: "{{ config }}/zsh/plugins/"
-        owner: bjanda
-        group: staff
         mode: '0644'
