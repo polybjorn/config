@@ -15,7 +15,6 @@
         src: "{{ config_repo }}/zsh/plugins/"
         dest: "{{ config }}/zsh/plugins/"
         owner: bjanda
-        group: staff
         mode: '0644'
 
     - name: Export ZSH aliases
@@ -23,7 +22,6 @@
         src: "{{ config_repo }}/zsh/.aliases"
         dest: "{{ config }}/zsh/.aliases"
         owner: bjanda
-        group: staff
         mode: '0644'
 
     - name: Export ZSH resources
@@ -31,7 +29,6 @@
         src: "{{ config_repo }}/zsh/.zshrc"
         dest: "{{ config }}/zsh/.zshrc"
         owner: bjanda
-        group: staff
         mode: '0644'
 
     - name: Export ZSH environment
@@ -40,5 +37,4 @@
         src: "{{ config_repo }}/zsh/zshenv"
         dest: /etc/zshenv
         owner: root
-        group: wheel
         mode: '0644'

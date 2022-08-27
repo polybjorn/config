@@ -10,4 +10,5 @@ export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export COMPOSE_PUBLIC=$REPOSITORIES/webserver-public/
 export COMPOSE_TUNNELED=$REPOSITORIES/webserver-tunneled/
 
-export LESSHISTFILE=-
+export LESSHISTFILE='-'
+export FZF_COMPLETION_TRIGGER='@@'

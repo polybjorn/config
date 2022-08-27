@@ -20,6 +20,7 @@ alias tup='sudo docker compose -f ${REPOSITORIES}/webserver-tunneled/docker-comp
 # Editor
 alias n='nvim'
 alias sn='sudo nvim'
+alias nf='find ~/.config ~/Dropbox/Repositories | fzf | xargs -o nvim'
 
 # Jekyll
 alias jup='bundle exec jekyll serve --detach --drafts'
