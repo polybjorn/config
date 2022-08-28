@@ -1,0 +1,25 @@
+# zsh-config.yml
+
+- name: Export tmux configuration files from repository
+  hosts: localhost
+  connection: local
+
+  vars:
+    config_repo: ~/Dropbox/Repositories/config
+    config: ~/.config
+
+  tasks:
+
+    - name: Export tmux plugins
+      ansible.builtin.copy:
+        src: "{{ config_repo }}/tmux/plugins/"
+        dest: "{{ config }}/tmux/plugins/"
+        owner: bjanda
+        mode: '0644'
+
+    - name: Export tmux configuration
+      ansible.builtin.copy:
+        src: "{{ config_repo }}/tmux/tmux.conf"
+        dest: "{{ config }}/tmux/tmux.conf"
+        owner: bjanda
+        mode: '0644'
