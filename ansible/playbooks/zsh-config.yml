@@ -19,17 +19,10 @@
         owner: bjanda
         mode: '0644'
 
-    - name: Export ZSH aliases
+    - name: Export ZSH dotfiles
       ansible.builtin.copy:
-        src: "{{ config_repo }}/zsh/.aliases"
-        dest: "{{ config }}/zsh/.aliases"
-        owner: bjanda
-        mode: '0644'
-
-    - name: Export ZSH resources
-      ansible.builtin.copy:
-        src: "{{ config_repo }}/zsh/.zshrc"
-        dest: "{{ config }}/zsh/.zshrc"
+        src: "{{ config_repo }}/zsh/.*"
+        dest: "{{ config }}/zsh/"
         owner: bjanda
         mode: '0644'
 
