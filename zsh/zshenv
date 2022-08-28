@@ -1,4 +1,4 @@
-# /etc/zshenv
+# /etc/zsh/zshenv
 export DOCKER_CONFIG=$HOME/.docker
 export REPOSITORIES=$HOME/Dropbox/Repositories
 export XDG_CACHE_HOME=$HOME/.cache
