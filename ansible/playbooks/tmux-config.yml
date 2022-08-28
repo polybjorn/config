@@ -1,4 +1,4 @@
-# zsh-config.yml
+# tmux-config.yml
 
 - name: Export tmux configuration files from repository
   hosts: localhost
