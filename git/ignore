@@ -1,4 +1,4 @@
-# ~/.config/git/ignore
+# ${XDG_CONFIG_HOME}/git/ignore
 
 # Compiled Python files
 *.pyc

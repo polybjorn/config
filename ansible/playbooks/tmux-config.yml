@@ -1,4 +1,4 @@
-# tmux-config.yml
+# ${XDG_CONFIG_HOME}/ansible/playbooks/tmux-config.yml
 
 - name: Export tmux configuration files from repository
   hosts: localhost

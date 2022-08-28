@@ -1,4 +1,4 @@
-# zsh-config.yml
+# ${XDG_CONFIG_HOME}/ansible/playbooks/zsh-config.yml
 
 - name: Export ZSH configuration files from repository
   hosts: localhost
@@ -19,10 +19,17 @@
         owner: bjanda
         mode: '0644'
 
-    - name: Export ZSH dotfiles
+    - name: Export ZSH aliases
       ansible.builtin.copy:
-        src: "{{ config_repo }}/zsh/.*"
-        dest: "{{ config }}/zsh/"
+        src: "{{ config_repo }}/zsh/.aliases"
+        dest: "{{ config }}/zsh/.aliases"
+        owner: bjanda
+        mode: '0644'
+
+    - name: Export ZSH configuration
+      ansible.builtin.copy:
+        src: "{{ config_repo }}/zsh/.zshrc"
+        dest: "{{ config }}/zsh/.zshrc"
         owner: bjanda
         mode: '0644'
 

@@ -1,0 +1,21 @@
+# ${XDG_CONFIG_HOME}/docker/docker-compose.yml
+
+version: "3.9"
+x-variables:
+  production-standard: &production-standard
+    init: true
+    restart: ${RESTART}
+    networks:
+      production-network:
+  env-standard: &env-standard
+    PUID: ${PUID}
+    PGID: ${PGID}
+    TZ: ${TZ}
+
+networks:
+  production-network:
+    name: production-network
+    driver: bridge
+  host-network:
+    name: host
+    external: true
