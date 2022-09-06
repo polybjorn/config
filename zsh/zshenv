@@ -13,4 +13,5 @@ export COMPOSE_PUBLIC=$REPOSITORIES/webserver-public/
 export COMPOSE_TUNNELED=$REPOSITORIES/webserver-tunneled/
 
 export LESSHISTFILE='-'
+export HISTFILE=$ZDOTDIR/.zsh_history
 export FZF_COMPLETION_TRIGGER='@@'

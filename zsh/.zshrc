@@ -1,11 +1,15 @@
 # ${XDG_CONFIG_HOME}/zsh/.zshrc
 
-export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
-export HISTFILE=${ZDOTDIR}/.zsh_history
+path+=('/bin')
+path+=('/opt/homebrew/bin')
+path+=('/Applications/Sublime Text.app/Contents/SharedSupport/bin')
+export PATH
 
-eval $(/opt/homebrew/bin/brew shellenv)
+#export HISTFILE=${ZDOTDIR}/.zsh_history
+#export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+#eval $(/opt/homebrew/bin/brew shellenv)
+
 eval $(thefuck --alias)
-
 [ -f ${ZDOTDIR}/plugins/fzf.zsh ] 
 
 source /usr/local/share/chruby/chruby.sh
