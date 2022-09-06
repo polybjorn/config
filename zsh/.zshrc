@@ -8,9 +8,9 @@ export PATH
 #export HISTFILE=${ZDOTDIR}/.zsh_history
 #export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 #eval $(/opt/homebrew/bin/brew shellenv)
+#[ -f ${ZDOTDIR}/plugins/fzf.zsh ] 
 
 eval $(thefuck --alias)
-[ -f ${ZDOTDIR}/plugins/fzf.zsh ] 
 
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
