@@ -1,18 +1,29 @@
 # /etc/zsh/zshenv (Ubuntu)
 # /etc/zshenv (OSX)
 
-export DOCKER_CONFIG=$HOME/.docker
-export REPOSITORIES=$HOME/Dropbox/Repositories
+# XDG base directories
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
 
+export REPOSITORIES=$HOME/Dropbox/Repositories
 export ANSIBLE_CONFIG=$XDG_CONFIG_HOME/ansible
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export PYTHONSTARTUP=$XDG_CONFIG_HOME/python/pythonstartup.py
-
-export COMPOSE_PUBLIC=$REPOSITORIES/config/
-export COMPOSE_PRIVATE=$REPOSITORIES/private/
-
+export WGETRC=$XDG_CONFIG_HOME/wget/wgetrc
 export LESSHISTFILE='-'
 export HISTFILE=$ZDOTDIR/.zsh_history
 export FZF_COMPLETION_TRIGGER='@@'
+
+# Docker
+export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
+export COMPOSE_PUBLIC=$REPOSITORIES/config
+export COMPOSE_PRIVATE=$REPOSITORIES/private
+
+# Ruby
+export GEM_HOME=$XDG_DATA_HOME/gem
+export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem
+export BUNDLE_USER_CONFIG=$XDG_CONFIG_HOME/bundle
+export BUNDLE_USER_CACHE=$XDG_CACHE_HOME/bundle
+export BUNDLE_USER_PLUGIN=$XDG_DATA_HOME/bundle
