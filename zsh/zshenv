@@ -8,7 +8,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 export ANSIBLE_CONFIG=$XDG_CONFIG_HOME/ansible
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
-export PYTHONSTARTUP=$XDG_CONFIG_HOME/python/cache-history.py
+export PYTHONSTARTUP=$XDG_CONFIG_HOME/python/pythonstartup.py
 
 export COMPOSE_PUBLIC=$REPOSITORIES/config/
 export COMPOSE_PRIVATE=$REPOSITORIES/private/
