@@ -8,8 +8,8 @@ eval $(thefuck --alias)
 
 [ -f ${ZDOTDIR}/plugins/fzf.zsh ] 
 
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
 source ${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh
 source ${XDG_CONFIG_HOME}/zsh/.aliases
 source ${ZDOTDIR}/plugins/fzf.zsh
