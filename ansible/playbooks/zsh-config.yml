@@ -23,6 +23,7 @@
       ansible.builtin.copy:
         src: "{{ config_repo }}/zsh/.aliases"
         dest: "{{ config }}/zsh/.aliases"
+        follow: yes
         owner: bjanda
         mode: '0644'
 
@@ -30,6 +31,7 @@
       ansible.builtin.copy:
         src: "{{ config_repo }}/zsh/.zshrc"
         dest: "{{ config }}/zsh/.zshrc"
+        follow: yes
         owner: bjanda
         mode: '0644'
 
