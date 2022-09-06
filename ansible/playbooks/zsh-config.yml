@@ -3,7 +3,6 @@
 - name: Export ZSH configuration files from repository
   hosts: localhost
   connection: local
-  become: yes
   gather_facts: true
 
   vars:
@@ -23,7 +22,6 @@
       ansible.builtin.copy:
         src: "{{ config_repo }}/zsh/.aliases"
         dest: "{{ config }}/zsh/.aliases"
-        follow: yes
         owner: bjanda
         mode: '0644'
 
@@ -31,12 +29,12 @@
       ansible.builtin.copy:
         src: "{{ config_repo }}/zsh/.zshrc"
         dest: "{{ config }}/zsh/.zshrc"
-        follow: yes
         owner: bjanda
         mode: '0644'
 
     - name: Export ZSH environment for OSX
       ansible.builtin.copy:
+        become: yes
         src: "{{ config_repo }}/zsh/zshenv"
         dest: /etc/zshenv
         owner: root
