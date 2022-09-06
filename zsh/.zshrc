@@ -16,7 +16,7 @@ source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 source ${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh
 source ${XDG_CONFIG_HOME}/zsh/.aliases
-source ${ZDOTDIR}/plugins/fzf.zsh
+source ${ZDOTDIR}/plugins/fzf/fzf.zsh
 source ${ZDOTDIR}/plugins/.iterm2_shell_integration.zsh
 source ${ZDOTDIR}/plugins/.p10k.zsh
 source ${ZDOTDIR}/plugins/copyfile.zsh
