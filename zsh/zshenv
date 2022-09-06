@@ -8,6 +8,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 export ANSIBLE_CONFIG=$XDG_CONFIG_HOME/ansible
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+export PYTHONSTARTUP=$XDG_CONFIG_HOME/python/cache_history.py
 
 export COMPOSE_PUBLIC=$REPOSITORIES/webserver-public/
 export COMPOSE_TUNNELED=$REPOSITORIES/webserver-tunneled/

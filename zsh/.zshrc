@@ -5,11 +5,6 @@ path+=('/opt/homebrew/bin')
 path+=('/Applications/Sublime Text.app/Contents/SharedSupport/bin')
 export PATH
 
-#export HISTFILE=${ZDOTDIR}/.zsh_history
-#export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
-#eval $(/opt/homebrew/bin/brew shellenv)
-#[ -f ${ZDOTDIR}/plugins/fzf.zsh ] 
-
 eval $(thefuck --alias)
 
 source /usr/local/share/chruby/chruby.sh
