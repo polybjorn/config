@@ -1,4 +1,4 @@
-# ${XDG_CONFIG_HOME}/python/cache_history.py
+# ${XDG_CONFIG_HOME}/python/cache-history.py
 
 import atexit
 import os
