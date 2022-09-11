@@ -6,7 +6,6 @@
   gather_facts: true
 
   vars:
-    user: ${USER}
     config_home: ${XDG_CONFIG_HOME}
     config_repo: ~/Dropbox/Repositories/config
 
@@ -15,21 +14,18 @@
       ansible.builtin.copy:
         src: "{{ config_repo }}/zsh/plugins/"
         dest: "{{ config_home }}/zsh/plugins/"
-        owner: {{ user }}
         mode: '0644'
 
     - name: Export ZSH aliases
       ansible.builtin.copy:
         src: "{{ config_repo }}/zsh/.aliases"
         dest: "{{ config_home }}/zsh/.aliases"
-        owner: {{ user }}
         mode: '0644'
 
     - name: Export ZSH configuration
       ansible.builtin.copy:
         src: "{{ config_repo }}/zsh/.zshrc"
         dest: "{{ config_home }}/zsh/.zshrc"
-        owner: {{ user }}
         mode: '0644'
 
     - name: Export ZSH environment for OSX
