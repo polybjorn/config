@@ -5,7 +5,6 @@
   connection: local
 
   vars:
-    user: $USER
     config_home: ${XDG_CONFIG_HOME}
     config_repo: ~/Dropbox/Repositories/config
     private_repo: ~/Dropbox/Repositories/private
@@ -15,12 +14,10 @@
       ansible.builtin.copy:
         src: "{{ config_repo }}/docker/"
         dest: "{{ config_home }}/docker/"
-        owner: "{{ user }}"
         mode: '0644'
 
     - name: Export docker-compose files from private repository
       ansible.builtin.copy:
         src: "{{ private_repo }}/docker/"
         dest: "{{ config_home }}/docker/"
-        owner: "{{ user }}"
         mode: '0644'
