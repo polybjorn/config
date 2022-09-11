@@ -6,7 +6,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias -- -="cd -"
 alias cdc='cd ${XDG_CONFIG_HOME}'
-alias cdr='cd ${HOME}/Dropbox/Repositories'
+alias cdr='cd ${REPOSITORIES}'
 alias lsa='ls -la'
 alias week='date +%V'
 
@@ -15,13 +15,14 @@ alias eans='nvim ${XDG_CONFIG_HOME}/ansible/ansible.cfg'
 alias cans='nvim ${XDG_CONFIG_HOME}/ansible/hosts'
 
 # Docker
-alias pup='sudo docker compose -f ${REPOSITORIES}/webserver-public/docker-compose.yml'
-alias tup='sudo docker compose -f ${REPOSITORIES}/webserver-tunneled/docker-compose.yml'
+alias dcc='sudo docker compose -f ${XDG_CONFIG_HOME}/docker/docker-compose.yml'
+alias dcb='sudo docker compose -f ${XDG_CONFIG_HOME}/docker/backup-compose.yml'
+alias dcp='sudo docker compose -f ${XDG_CONFIG_HOME}/docker/private-compose.yml'
 
 # Editor
 alias n='nvim'
 alias sn='sudo nvim'
-alias nf='find ~/.config ~/Dropbox/Repositories | fzf | xargs -o nvim'
+alias nf='find ~/.config ${REPOSITORIES} | fzf | xargs -o nvim'
 
 # Jekyll
 alias jup='bundle exec jekyll serve --detach --drafts'
