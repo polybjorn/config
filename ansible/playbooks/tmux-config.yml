@@ -9,11 +9,14 @@
     config_repo: ~/Dropbox/Repositories/config
 
   tasks:
-    - name: Export tmux plugins
-      ansible.builtin.copy:
-        src: "{{ config_repo }}/tmux/plugins/"
-        dest: "{{ config_home }}/tmux/plugins/"
-        mode: '0644'
+
+# Replace with path creation + git pull?
+
+#   - name: Export tmux plugins
+#     ansible.builtin.copy:
+#       src: "{{ config_repo }}/tmux/plugins/"
+#       dest: "{{ config_home }}/tmux/plugins/"
+#       mode: '0644'
 
     - name: Export tmux configuration
       ansible.builtin.copy:
