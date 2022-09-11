@@ -15,9 +15,8 @@ alias eans='nvim ${XDG_CONFIG_HOME}/ansible/ansible.cfg'
 alias cans='nvim ${XDG_CONFIG_HOME}/ansible/hosts'
 
 # Docker
-alias dcc='sudo docker compose -f ${XDG_CONFIG_HOME}/docker/docker-compose.yml'
+alias dcp='sudo docker compose -f ${XDG_CONFIG_HOME}/docker/docker-compose.yml'
 alias dcb='sudo docker compose -f ${XDG_CONFIG_HOME}/docker/backup-compose.yml'
-alias dcp='sudo docker compose -f ${XDG_CONFIG_HOME}/docker/private-compose.yml'
 
 # Editor
 alias n='nvim'
