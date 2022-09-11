@@ -15,12 +15,12 @@
       ansible.builtin.copy:
         src: "{{ config_repo }}/docker/"
         dest: "{{ config_home }}/docker/"
-        owner: {{ user }}
+        owner: "{{ user }}"
         mode: '0644'
 
     - name: Export docker-compose files from private repository
       ansible.builtin.copy:
         src: "{{ private_repo }}/docker/"
         dest: "{{ config_home }}/docker/"
-        owner: {{ user }}
+        owner: "{{ user }}"
         mode: '0644'
