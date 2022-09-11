@@ -11,8 +11,6 @@ x-variables:
     PGID: ${PGID}
     TZ: ${TZ}
 
-env_file: .env
-
 services:
   adminer:
     container_name: adminer

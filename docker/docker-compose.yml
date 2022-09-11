@@ -19,8 +19,6 @@ networks:
     name: host
     external: true
 
-env_file: .env
-
 services:
   authelia:
     container_name: authelia
