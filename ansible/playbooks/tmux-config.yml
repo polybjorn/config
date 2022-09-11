@@ -5,7 +5,6 @@
   connection: local
 
   vars:
-    user: $USER
     config_home: ${XDG_CONFIG_HOME}
     config_repo: ~/Dropbox/Repositories/config
 
@@ -14,12 +13,10 @@
       ansible.builtin.copy:
         src: "{{ config_repo }}/tmux/plugins/"
         dest: "{{ config_home }}/tmux/plugins/"
-        owner: {{ user }}
         mode: '0644'
 
     - name: Export tmux configuration
       ansible.builtin.copy:
         src: "{{ config_repo }}/tmux/tmux.conf"
         dest: "{{ config_home }}/tmux/tmux.conf"
-        owner: {{ user }}
         mode: '0644'

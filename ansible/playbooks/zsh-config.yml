@@ -6,7 +6,7 @@
   gather_facts: true
 
   vars:
-    user: $USER
+    user: ${USER}
     config_home: ${XDG_CONFIG_HOME}
     config_repo: ~/Dropbox/Repositories/config
 
