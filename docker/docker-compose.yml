@@ -2,12 +2,11 @@
 
 version: "3.9"
 x-variables:
-  production-standard: &production-standard
-    init: true
+  production-standard: &default
     restart: ${RESTART}
     networks:
       production-network:
-  env-standard: &env-standard
+  env-standard: &env
     PUID: ${PUID}
     PGID: ${PGID}
     TZ: ${TZ}
@@ -21,17 +20,108 @@ networks:
     external: true
 
 services:
-  vault:
-    image: vault
-    container_name: vault
-#    volumes:
-#      - ${CONFIG}/vault/logs:/vault/logs
-#      - ${CONFIG}/vault/file:/vault/file
+  authelia:
+    container_name: authelia
+    image: authelia/authelia:4.21.0
+    << : *default
+    environment: *env
+    volumes:
+      - ${CONFIG}/authelia:/config
+
+  duckdns:
+    container_name: duckdns
+    image: lscr.io/linuxserver/duckdns
+    << : *default
     environment:
-#      << : *env-standard
+      << : *env
+      SUBDOMAINS: ${DUCKDNS_SUBDOMAIN}
+      TOKEN: ${DUCKDNS_TOKEN}
+    volumes:
+      - ${CONFIG}/duckdns:/config
+
+  homeassistant:
+    container_name: homeassistant
+    image: ghcr.io/home-assistant/home-assistant:2022.6.0
+    << : *default
+    environment: *env
+    privileged: true
+    ports:
+      - 8123:8123
+    volumes:
+      - ${CONFIG}/homeassistant:/config
+      - /etc/localtime:/etc/localtime:ro
+
+  mariadb:
+    container_name: mariadb
+    image: ghcr.io/linuxserver/mariadb:alpine
+    << : *default
+    environment:
+      << : *env
+      MYSQL_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+    volumes:
+      - ${CONFIG}/mariadb:/config 
+
+  mosquitto:
+    container_name: mosquitto
+    image: eclipse-mosquitto
+    << : *default
+    environment: *env
+    ports:
+      - 8333:8333
+      - 9001:9001
+    volumes:
+      - ${CONFIG}/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ${CONFIG}/mosquitto/log:/mosquitto/log
+      - ${CONFIG}/mosquitto/data:/mosquitto/data
+
+  postgres:
+    container_name: postgres
+    image: postgres
+    << : *default
+    environment:
+      << : *env
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - 5432:5432
+    volumes:
+      - ${CONFIG}/postgres:/var/lib/postgresql/data
+
+  recipes:
+    container_name: recipes
+    image: vabene1111/recipes
+    << : *default
+    environment:
+      << : *env
+      SECRET_KEY: ${RECIPES_SECRET_KEY}
+      DB_ENGINE: django.db.backends.postgresql
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: recipes
+      ALLOWED_HOSTS: '*'
+      REVERSE_PROXY_AUTH: 0
+      TANDOOR_PORT: 8063
+      DEBUG: 0
+      GUNICORN_MEDIA: 0
+    ports:
+      - 8063:8063
+    volumes:
+      - ${CONFIG}/recipes/staticfiles:/opt/recipes/staticfiles
+      - ${CONFIG}/recipes/mediafiles:/opt/recipes/mediafiles
+
+  vault:
+    container_name: vault
+    image: vault
+    << : *default
+    environment:
+      << : *env
       VAULT_DEV_LISTEN_ADDRESS: 0.0.0.0:8200
-      VAULT_DEV_ROOT_TOKEN_ID: my-token
+      VAULT_DEV_ROOT_TOKEN_ID: ${VAULT_DEV_ROOT_TOKEN_ID}
     ports:
       - 8200:8200
     cap_add:
       - IPC_LOCK
+    volumes:
+      - ${CONFIG}/vault/logs:/vault/logs
+      - ${CONFIG}/vault/file:/vault/file

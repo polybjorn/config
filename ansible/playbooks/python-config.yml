@@ -1,18 +1,18 @@
-# ${XDG_CONFIG_HOME}/python-config.yml
+# ${XDG_CONFIG_HOME}/ansible/playbooks/python-config.yml
 
 - name: Export Python configuration files from repository
   hosts: localhost
   connection: local
 
   vars:
+    user: $USER
     config_home: ${XDG_CONFIG_HOME}
     config_repo: ~/Dropbox/Repositories/config
 
   tasks:
-
     - name: Export python scripts
       ansible.builtin.copy:
         src: "{{ config_repo }}/python/"
         dest: "{{ config_home }}/python/"
-        owner: bjanda
+        owner: {{ user }}
         mode: '0644'
