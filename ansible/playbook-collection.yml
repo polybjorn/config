@@ -1,22 +1,21 @@
 # ${XDG_CONFIG_HOME}/ansible/playbooks/playbook-collection.yml
 
 - name: Export all configuration files from all repository
-  hosts: localhost
-  connection: local
+  hosts: all
 
   vars:
     config_home: ${XDG_CONFIG_HOME}
     config_repo: ~/Dropbox/Repositories/config
     private_repo: ~/Dropbox/Repositories/private
 
-- name: Include all playbooks
+- name: Include all docker configuration
   import_playbook: docker-config.yml
 
-- name: Include all playbooks
+- name: Include all python configuration
   import_playbook: python-config.yml
 
-- name: Include all playbooks
+- name: Include all tmux configuration
   import_playbook: tmux-config.yml
 
-- name: Include all playbooks
+- name: Include all zsh configuration
   import_playbook: zsh-config.yml
