@@ -13,7 +13,7 @@ alias week='date +%V'
 # Ansible
 alias eans='nvim ${XDG_CONFIG_HOME}/ansible/ansible.cfg'
 alias cans='nvim ${XDG_CONFIG_HOME}/ansible/hosts'
-alias pans='ansible-playbook -K ${REPOSITORIES}/config/playbook-collection.yml'
+alias pans='ansible-playbook -K ${REPOSITORIES}/config/ansible/playbook-collection.yml'
 
 # Docker
 alias dcp='sudo docker compose -f ${XDG_CONFIG_HOME}/docker/docker-compose.yml'
