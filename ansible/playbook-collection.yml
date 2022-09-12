@@ -1,7 +1,7 @@
 # ${XDG_CONFIG_HOME}/ansible/playbooks/playbook-collection.yml
 
 - name: Export all configuration files from all repository
-  hosts: all
+  hosts: unix
 
   vars:
     config_home: ${XDG_CONFIG_HOME}
