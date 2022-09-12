@@ -11,6 +11,12 @@
 
 - name: Include all playbooks
   import_playbook: docker-config.yml
+
+- name: Include all playbooks
   import_playbook: python-config.yml
+
+- name: Include all playbooks
   import_playbook: tmux-config.yml
+
+- name: Include all playbooks
   import_playbook: zsh-config.yml
