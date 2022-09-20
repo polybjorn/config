@@ -3,9 +3,6 @@
 - name: Export all configuration files from all repository
   hosts: unix
 
-- name: Include all docker configuration
-  import_playbook: playbooks/docker-config.yml
-
 - name: Include all python configuration
   import_playbook: playbooks/python-config.yml
 
