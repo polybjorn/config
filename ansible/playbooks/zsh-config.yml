@@ -44,4 +44,4 @@
         dest: /etc/zsh/zshenv
         owner: root
         mode: '0644'
-      when: ansible_facts['distribution'] == "Ubuntu" 
+      when: ansible_facts['os_family'] == "Debian" 
