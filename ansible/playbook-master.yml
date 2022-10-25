@@ -2,14 +2,19 @@
 
 - name: Master playbook
   hosts: localhost
+  
   vars_files:
     - ~/Repositories/private/variables/ansible-variables.yml
 
-- name: Pull all Github repositories
-  import_playbook: playbooks/git-sync.yml
+  tasks:
+  - name: Pull all Github repositories
+    import_playbook: playbooks/git-sync.yml
 
-- name: Import all configuration
-  import_playbook: 
-    - playbooks/python-config.yml
-    - playbooks/tmux-config.yml
-    - playbooks/zsh-config.yml
+  - name: Import Python configuration
+    import_playbook: playbooks/python-config.yml
+
+  - name: Import Tmux configuration
+    import_playbook: playbooks/tmux-config.yml
+
+  - name: Import ZSH configuration
+    import_playbook: playbooks/zsh-config.yml
