@@ -1,10 +1,10 @@
-# ~/git/config/ansible/playbooks/tmux-config.yml
+# ~/Repositories/config/ansible/playbooks/tmux-config.yml
 
 - name: Export tmux configuration files from repository
   hosts: unix
 
   vars_files:
-    - ~/git/private/variables/ansible-variables.yml
+    - ~/Repositories/private/variables/ansible-variables.yml
 
   tasks:
     - name: Export tmux configuration

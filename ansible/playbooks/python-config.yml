@@ -1,10 +1,10 @@
-# ~/git/config/ansible/playbooks/python-config.yml
+# ~/Repositories/config/ansible/playbooks/python-config.yml
 
 - name: Export Python configuration files from repository
   hosts: unix
 
   vars_files:
-    - ~/git/private/variables/ansible-variables.yml
+    - ~/Repositories/private/variables/ansible-variables.yml
     
   tasks:
     - name: Export python scripts

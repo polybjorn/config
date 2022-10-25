@@ -1,4 +1,4 @@
-# ~/git/config/ansible/playbooks/git-sync.yml
+# ~/Repositories/config/ansible/playbooks/git-sync.yml
 
 - hosts: local
 

@@ -1,12 +1,11 @@
-# ~/git/config/ansible/playbooks/zsh-config.yml
+# ~/Repositories/config/ansible/playbooks/zsh-config.yml
 
 - name: Export ZSH configuration files from repository
   hosts: unix
-  connection: local
   gather_facts: true
 
   vars_files:
-    - ~/git/private/variables/ansible-variables.yml
+    - ~/Repositories/private/variables/ansible-variables.yml
 
   tasks:
     - name: Export ZSH plugins
