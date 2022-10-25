@@ -6,7 +6,7 @@
 
   vars:
     config_home: ${XDG_CONFIG_HOME}
-    config_repo: ~/Dropbox/Repositories/config
+    config_repo: ${REPOSITORIES}/config
 
   tasks:
 

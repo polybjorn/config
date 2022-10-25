@@ -3,6 +3,9 @@
 - name: Export all configuration files from all repository
   hosts: unix
 
+- name: Pull all Github repositories
+  import_playbook: playbooks/git-sync.yml
+
 - name: Include all python configuration
   import_playbook: playbooks/python-config.yml
 

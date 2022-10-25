@@ -7,7 +7,7 @@
 
   vars:
     config_home: ${XDG_CONFIG_HOME}
-    config_repo: ~/Dropbox/Repositories/config
+    config_repo: ${REPOSITORIES}/config
 
   tasks:
     - name: Export ZSH plugins
@@ -28,7 +28,7 @@
         dest: "{{ config_home }}/zsh/.zshrc"
         mode: '0644'
 
-    - name: Export ZSH environment for OSX
+    - name: Export ZSH environment for MacOSX
       become: yes
       ansible.builtin.copy:
         src: "{{ config_repo }}/zsh/zshenv"
@@ -37,7 +37,7 @@
         mode: '0644'
       when: ansible_facts['distribution'] == "MacOSX" 
 
-    - name: Export ZSH environment for Ubuntu
+    - name: Export ZSH environment for Debian
       become: yes
       ansible.builtin.copy:
         src: "{{ config_repo }}/zsh/zshenv"
