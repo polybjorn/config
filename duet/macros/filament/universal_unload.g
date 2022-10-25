@@ -1,5 +1,3 @@
-;; Universal unload.g  - direct all other filament unoad.g instances to this file
-;;
 ;M929 P"0:/macros/filament/unloadeventlog.txt" S3
 echo "entering 0:/macros/filament/universal_unload.g"
 M106 S0  ; fan off

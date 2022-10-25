@@ -18,7 +18,6 @@ if state.currentTool=-1
 ; filament to load is stored in global variable - global.LoadedFilament
 M80 ; ensure machine is powered up
 G4 S3
-M42 P5 S1 ; make sure the LED lights are on so we can see to load the filament
 ;M291 R{"Loading " ^ global.LoadedFilament} P"Loading config and heating" S1 T3
 G4 S3
 echo "attempting to load config for " ^ global.LoadedFilament
@@ -49,8 +48,7 @@ if job.file.fileName!=null && state.status!="paused"
 	echo "Print job is running - confirmation required"
 	M291 R"Confirm?" P"A print job is in progress.  Press OK to continue or CANCEL to abort" S3
 
-
-;we know the requested filament isn't loaded, but if something else is, we need to unload it first
+; we know the requested filament isn't loaded, but if something else is, we need to unload it first
 if {move.extruders[state.currentTool].filament!=""} && {global.filamentDistance=0}
 	echo "unload required"
 	if move.extruders[state.currentTool].filament!=global.LoadedFilament
@@ -73,8 +71,6 @@ if {move.extruders[state.currentTool].filament!=global.LoadedFilament}
 
 M291 R{"Loading " ^ global.LoadedFilament} P"Filament loaded....." S0 T3
 G4 S3
-M98 P"0:/macros/songs/simpsons.g"
-set global.filamentDistance = 0 ; reset filament sensor extrusion distance after tripping
 echo "exiting universal_load.g"
 M568 P{state.currentTool} A0 ; turn off heater again
 ;M929 S0 ; stop logging
