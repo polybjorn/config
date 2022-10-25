@@ -13,6 +13,8 @@
 
     - name: pull latest changes
       become: yes
+      owner: root
+      mode: '0644'
       shell: git pull 
       args:
         chdir: "{{ item.path }}"
