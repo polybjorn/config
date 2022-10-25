@@ -1,6 +1,6 @@
 # ~/Repositories/config/ansible/playbooks/git-sync.yml
 
-- hosts: local
+- hosts: localhost
 
   tasks:
    - name: find git directories

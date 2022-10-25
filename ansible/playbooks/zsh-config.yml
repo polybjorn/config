@@ -1,7 +1,7 @@
 # ~/Repositories/config/ansible/playbooks/zsh-config.yml
 
 - name: Export ZSH configuration files from repository
-  hosts: unix
+  hosts: localhost
   gather_facts: true
 
   vars_files:
