@@ -1,6 +1,8 @@
 # ~/Repositories/config/ansible/playbooks/git-sync.yml
 
 - hosts: localhost
+  vars:
+    ansible_python_interpreter: "/usr/bin/env python3"
 
   tasks:
     - name: find git directories
