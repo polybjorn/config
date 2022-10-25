@@ -1,4 +1,4 @@
-# ${XDG_CONFIG_HOME}/ansible/playbooks/git-sync.yml
+# ~/git/config/ansible/playbooks/git-sync.yml
 
 - hosts: local
 

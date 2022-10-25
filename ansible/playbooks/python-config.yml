@@ -1,13 +1,11 @@
-# ${XDG_CONFIG_HOME}/ansible/playbooks/python-config.yml
+# ~/git/config/ansible/playbooks/python-config.yml
 
 - name: Export Python configuration files from repository
-  hosts: localhost
-  connection: local
+  hosts: unix
 
-  vars:
-    config_home: ${XDG_CONFIG_HOME}
-    config_repo: ${REPOSITORIES}/config
-
+  vars_files:
+    - ~/git/private/variables/ansible-variables.yml
+    
   tasks:
     - name: Export python scripts
       ansible.builtin.copy:

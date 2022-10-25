@@ -1,0 +1,16 @@
+# ~/git/config/ansible/playbook-master.yml
+
+- name: Master playbook
+  hosts: unix
+
+  vars_files:
+    - ~/git/private/variables/ansible-variables.yml
+
+  tasks:
+    - name: Pull all Github repositories
+      import_playbook: playbooks/git-sync.yml
+
+    - name: Import all configuration
+      import_playbook: playbooks/python-config.yml
+      import_playbook: playbooks/tmux-config.yml
+      import_playbook: playbooks/zsh-config.yml
