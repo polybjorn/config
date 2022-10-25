@@ -2,6 +2,9 @@
 
 - hosts: localhost
 
+  vars_files:
+    - {{ private_repo }}/variables/ansible-variables.yml
+
   tasks:
     - name: Pull config repository
       git:
