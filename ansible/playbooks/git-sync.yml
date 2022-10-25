@@ -12,6 +12,7 @@
       register: found_directories
 
     - name: pull latest changes
+      become: yes
       shell: git pull 
       args:
         chdir: "{{ item.path }}"
