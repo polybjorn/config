@@ -3,15 +3,15 @@
 - hosts: localhost
 
   tasks:
-   - name: find git directories
-     find:
-       paths: "{{ ansible_env.HOME }}/git"
-       file_type: directory
-     register: found_directories
+    - name: find git directories
+      find:
+        paths: "{{ ansible_env.HOME }}/git"
+        file_type: directory
+      register: found_directories
 
-   - name: pull latest changes
-     shell: git pull 
-     args:
-       chdir: "{{ item.path }}"
-       executable: /bin/bash
-     with_items: "{{ found_directories.files }}"
+    - name: pull latest changes
+      shell: git pull 
+      args:
+        chdir: "{{ item.path }}"
+        executable: /bin/bash
+      with_items: "{{ found_directories.files }}"
