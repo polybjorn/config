@@ -26,20 +26,20 @@
         dest: "{{ config_home }}/zsh/.zshrc"
         mode: '0644'
 
-    - name: Export ZSH environment for MacOSX
-      become: yes
-      ansible.builtin.copy:
-        src: "{{ config_repo }}/zsh/zshenv"
-        dest: /etc/zshenv
-        owner: root
-        mode: '0644'
-      when: ansible_facts['distribution'] == "MacOSX" 
-
-    - name: Export ZSH environment for Debian
+    - name: Export ZSH environment for server
       become: yes
       ansible.builtin.copy:
         src: "{{ config_repo }}/zsh/zshenv"
         dest: /etc/zsh/zshenv
         owner: root
         mode: '0644'
-      when: ansible_facts['os_family'] == "Debian" 
+      when: ansible_facts['os_family'] == "{{ server_system }}" 
+
+    - name: Export ZSH environment for Client 1
+      become: yes
+      ansible.builtin.copy:
+        src: "{{ config_repo }}/zsh/zshenv"
+        dest: /etc/zshenv
+        owner: root
+        mode: '0644'
+      when: ansible_facts['distribution'] == "{{ client1_system }}" 
