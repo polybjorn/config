@@ -1,17 +1,18 @@
 # ~/Repositories/config/ansible/playbooks/git-sync.yml
 
-- hosts: localhost
+- name: Sync all Github repositories
+  hosts: localhost
 
   vars_files:
-    - {{ private_repo }}/variables/ansible-variables.yml
+    - ~/Repositories/private/variables/ansible-variables.yml
 
   tasks:
     - name: Pull config repository
-      git:
+      ansible.builtin.git:
         repo: "{{ config_repo_url }}"
         dest: "{{ config_repo }}"
 
     - name: Pull private repository
-      git:
+      ansible.builtin.git:
         repo: "{{ private_repo_url }}"
         dest: "{{ private_repo }}"

@@ -5,7 +5,7 @@
   gather_facts: true
 
   vars_files:
-    - {{ private_repo }}/variables/ansible-variables.yml
+    - ~/Repositories/private/variables/ansible-variables.yml
 
   tasks:
     - name: Export ZSH plugins
