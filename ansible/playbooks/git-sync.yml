@@ -7,7 +7,7 @@
   tasks:
     - name: find git directories
       find:
-        paths: "{{ ansible_env.HOME }}/git"
+        paths: "{{ ansible_env.HOME }}/Repositories"
         file_type: directory
       register: found_directories
 
