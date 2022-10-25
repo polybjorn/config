@@ -1,22 +1,14 @@
 # ~/Repositories/config/ansible/playbooks/git-sync.yml
 
 - hosts: localhost
-  vars:
-    ansible_python_interpreter: "/usr/bin/env python3"
 
   tasks:
-    - name: find git directories
-      find:
-        paths: "{{ ansible_env.HOME }}/Repositories"
-        file_type: directory
-      register: found_directories
+    - name: Pull config repository
+      git:
+        repo: "{{ config_repo_url }}"
+        dest: "{{ config_repo }}"
 
-    - name: pull latest changes
-      become: yes
-      owner: root
-      mode: '0644'
-      shell: git pull 
-      args:
-        chdir: "{{ item.path }}"
-        executable: /bin/bash
-      with_items: "{{ found_directories.files }}"
+    - name: Pull private repository
+      git:
+        repo: "{{ private_repo_url }}"
+        dest: "{{ private_repo }}"
