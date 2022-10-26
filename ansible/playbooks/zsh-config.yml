@@ -2,10 +2,9 @@
 
 - name: Export ZSH configuration files from repository
   hosts: localhost
-  gather_facts: true
 
   vars_files:
-    - ~/Repositories/private/variables/ansible-variables.yml
+    - ~/Repositories/private/ansible/variables.yml
 
   tasks:
     - name: Export ZSH plugins
@@ -28,6 +27,7 @@
 
     - name: Export ZSH environment for server
       become: yes
+      gather_facts: true
       ansible.builtin.copy:
         src: "{{ config_repo }}/zsh/zshenv"
         dest: /etc/zsh/zshenv
@@ -37,6 +37,7 @@
 
     - name: Export ZSH environment for client 1
       become: yes
+      gather_facts: true
       ansible.builtin.copy:
         src: "{{ config_repo }}/zsh/zshenv"
         dest: /etc/zshenv

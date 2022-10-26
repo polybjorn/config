@@ -16,8 +16,8 @@ alias cans='nvim ${XDG_CONFIG_HOME}/ansible/hosts'
 alias pans='ansible-playbook -K ${REPOSITORIES}/config/ansible/playbook-master.yml -i ${REPOSITORIES}/private/ansible/inventory'
 
 # Docker
-alias dcp='sudo docker compose -f ${REPOSITORIES}/private/docker-compose/docker-compose.yml'
-alias dcb='sudo docker compose -f ${REPOSITORIES}/private/docker-compose/backup-compose.yml'
+alias dcp='sudo docker compose -f ${REPOSITORIES}/private/docker/default-compose.yml --env-file ${REPOSITORIES}/private/docker/variables.yml'
+alias dcb='sudo docker compose -f ${REPOSITORIES}/private/docker/backup-compose.yml --env-file ${REPOSITORIES}/private/docker/variables.yml'
 
 # Editor
 alias n='nvim'

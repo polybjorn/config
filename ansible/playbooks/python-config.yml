@@ -4,7 +4,7 @@
   hosts: localhost
 
   vars_files:
-    - ~/Repositories/private/variables/ansible-variables.yml
+    - ~/Repositories/private/ansible/variables.yml
     
   tasks:
     - name: Export python scripts
