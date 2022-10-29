@@ -2,6 +2,7 @@
 
 - name: Export ZSH configuration files from repository
   hosts: localhost
+  gather_facts: true
 
   vars_files:
     - ~/Repositories/private/ansible/variables.yml
@@ -26,21 +27,20 @@
         mode: '0644'
 
     - name: Export ZSH environment for server
+      when: ansible_facts['os_family'] == "{{ server_system }}" 
       become: yes
-      gather_facts: true
       ansible.builtin.copy:
         src: "{{ config_repo }}/zsh/zshenv"
         dest: /etc/zsh/zshenv
         owner: root
         mode: '0644'
-      when: ansible_facts['os_family'] == "{{ server_system }}" 
+
 
     - name: Export ZSH environment for client 1
+      when: ansible_facts['distribution'] == "{{ client1_system }}"       
       become: yes
-      gather_facts: true
       ansible.builtin.copy:
         src: "{{ config_repo }}/zsh/zshenv"
         dest: /etc/zshenv
         owner: root
         mode: '0644'
-      when: ansible_facts['distribution'] == "{{ client1_system }}" 
