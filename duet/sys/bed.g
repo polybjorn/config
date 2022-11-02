@@ -1,4 +1,4 @@
-; M561                      ; clear any bed transform
+; M561                        clear any bed transform
 G28                         ; home
 
 G30 P0 X0 Y260 Z-99999      ; probe near a leadscrew

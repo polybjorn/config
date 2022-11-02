@@ -1,5 +1,5 @@
-M280 P0 S160           ; Precautionary alarm release
-M280 P0 S90            ; Ensure the pin is raised
+M280 P0 S160            ; Precautionary alarm release
+M280 P0 S90             ; Ensure the pin is raised
 
 G91                     ; Relative positioning
 G1 H2 Z5 F6000          ; Lift Z relative to current position
