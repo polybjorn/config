@@ -1,13 +1,25 @@
-# ~/Repositories/config/ansible/playbooks/zsh-config.yml
+# ~/Repositories/config/ansible/playbooks/sync/config-sync.yml
 
-- name: Export ZSH configuration files from repository
+- name: Sync Python configuration files from repository
   hosts: localhost
   gather_facts: true
 
   vars_files:
     - ~/Repositories/private/ansible/variables.yml
-
+    
   tasks:
+    - name: Sync Python scripts
+      ansible.builtin.copy:
+        src: "{{ config_repo }}/python/"
+        dest: "{{ config_home }}/python/"
+        mode: '0644'
+
+    - name: Sync tmux configuration
+      ansible.builtin.copy:
+        src: "{{ config_repo }}/tmux/tmux.conf"
+        dest: "{{ config_home }}/tmux/tmux.conf"
+        mode: '0644'
+
     - name: Export ZSH plugins
       ansible.builtin.copy:
         src: "{{ config_repo }}/zsh/plugins/"
@@ -35,8 +47,7 @@
         owner: root
         mode: '0644'
 
-
-    - name: Export ZSH environment for client 1
+    - name: Export ZSH environment for client (1)
       when: ansible_facts['distribution'] == "{{ client1_system }}"       
       become: yes
       ansible.builtin.copy:

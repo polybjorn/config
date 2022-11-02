@@ -1,4 +1,4 @@
-# ~/Repositories/config/ansible/playbooks/git-sync.yml
+# ~/Repositories/config/ansible/playbooks/sync/git-sync.yml
 
 - name: Sync all Github repositories
   hosts: localhost

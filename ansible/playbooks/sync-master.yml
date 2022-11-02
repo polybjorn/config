@@ -1,0 +1,13 @@
+# ~/Repositories/config/ansible/sync-master.yml
+
+- name: Run all sync playbooks
+  hosts: localhost
+
+  vars_files:
+    - ~/Repositories/private/ansible/variables.yml
+
+- name: Pull all Github repositories
+  import_playbook: playbooks/git-sync.yml
+
+- name: Sync all configuration tasks
+  import_playbook: playbooks/config-sync.yml
