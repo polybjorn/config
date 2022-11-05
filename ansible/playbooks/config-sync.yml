@@ -1,4 +1,4 @@
-# ~/Repositories/config/ansible/playbooks/sync/config-sync.yml
+# ~/Repositories/config/ansible/playbooks/config-sync.yml
 
 - name: Sync Python configuration files from repository
   hosts: localhost
