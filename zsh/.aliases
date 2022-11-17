@@ -18,6 +18,8 @@ alias pans='ansible-playbook -K ${REPOSITORIES}/config/ansible/sync-master.yml -
 # Docker
 alias dcp='sudo docker compose -f ${REPOSITORIES}/private/docker/default-compose.yml --env-file ${REPOSITORIES}/private/docker/variables.yml'
 alias dcb='sudo docker compose -f ${REPOSITORIES}/private/docker/backup-compose.yml --env-file ${REPOSITORIES}/private/docker/variables.yml'
+alias dlog='sudo docker logs'
+alias dcon='sudo docker container'
 
 # Editor
 alias n='nvim'
