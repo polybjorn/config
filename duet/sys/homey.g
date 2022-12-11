@@ -1,14 +1,18 @@
 ; /opt/dsf/sd/sys/homey.g
 
 G91                     ; relative positioning
-G1 H2 Z5 F6000          ; lift Z
+G1 H2 Z10 F6000         ; lower heated bed
 
-G1 H1 Y303 F1800        ; move quickly to Y axis endstop and stop there (first pass)
-G1 H2 Y5 F6000          ; go back a few mm
-G1 H1 X-5
-M400
-G1 H1 Y303 F360         ; move slowly to Y axis endstop once more (second pass)
+- - - Home Y axis start - - -
 
-G1 H2 Z-5 F6000         ; lower Z
+G1 H1 Y303 F1800        ; home Y axis, first pass, high endstop
+G1 H2 Y5 F6000          ; reverse XY axis
+G1 H1 X-5               ; ..
+M400                    ; wait for previous moves
+G1 H1 Y303 F360         ; home Y axis, second pass, high endstop
+
+- - - Home Y axis stop - - -
+
+G1 H2 Z-5 F6000         ; raise heated bed
 G90                     ; absolute positioning
 

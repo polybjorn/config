@@ -1,17 +1,19 @@
 ; /opt/dsf/sd/sys/homez.g
 
-; BLTouch
-M280 P0 S160            ; Precautionary alarm release
-M280 P0 S90             ; Ensure the pin is raised
+M280 P0 S160            ; release alarm and retract probe (BLTouch V3.1)
+M280 P0 S90             ; retract probe (BLTouch V3.1)
+G91                     ; relative positioning
+G1 H2 Z10 F6000         ; lower heated bed
 
-G91                     ; Relative positioning
-G1 H2 Z5 F6000          ; lift Z
+- - - Home Z axis start - - -
 
-G90                     ; Absolute positioning
-G1 X90 Y130 F3600       ; Go to the center
-G30                     ; Home Z by probing the bed
+G90                     ; absolute positioning
+G1 X90 Y130 F3600       ; go to center
+G30                     ; Z-probe
 
-G91                     ; Relative positioning
-G1 Z5 F6000             ; Lift Z
-G90                     ; Absolute positioning
+- - - Home Z axis stop - - -
+
+G91                     ; relative positioning
+G1 Z-5 F6000            ; raise heated bed
+G90                     ; absolute positioning
 

@@ -1,10 +1,12 @@
-G28                         ; home
+; /opt/dsf/sd/sys/bed.g
 
-G30 P0 X271 Y5 Z-99999      ; probe near a leadscrew
-G30 P1 X46 Y130 Z-99999     ; probe near a leadscrew
-G30 P2 X271 Y290 Z-99999 S3 ; probe near a leadscrew and calibrate 3 motors
+G28                         ; home XYZ axis
 
-G90                         ; Absolute positioning
-G1 X90 Y130 F10000          ; Go to the center of the bed
-G30                         ; Home Z by probing the bed
+G30 P0 X271 Y5 Z-99999      ; probe left leadscrew
+G30 P1 X46 Y130 Z-99999     ; probe rear leadscrew
+G30 P2 X271 Y290 Z-99999 S3 ; probe right leadscrew and level bed
+
+G90                         ; absolute positioning
+G1 X90 Y130 F10000          ; go to center
+G30                         ; Z-probe
 
