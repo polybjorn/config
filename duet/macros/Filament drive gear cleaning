@@ -1,3 +1,0 @@
-M302 P1    ; allow cold extrusion
-G1 E5 F300 ; move extruder 5mm with feedrate 300mm/min
-M302 P0    ; disable cold extrusion

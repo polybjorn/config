@@ -1,1 +1,4 @@
-M280 P2 S90		    	; Retract the BLTouch pin
+; /opt/dsf/sd/sys/retractprobe.g
+
+M280 P0 S160		    	; Retract the BLTouch pin
+

@@ -1,1 +1,0 @@
-M302 P1 ; Allow cold extrusion

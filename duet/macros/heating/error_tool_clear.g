@@ -1,1 +1,0 @@
-M562 P1 ; clear heater fault on heater 1

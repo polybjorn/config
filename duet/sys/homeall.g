@@ -1,33 +1,27 @@
-M201 X500.00 Y500.00    ; Reduce acceleration for homing moves
+; /opt/dsf/sd/sys/homeall.g
 
-; BLTouch
 M280 P0 S160            ; Precautionary alarm release
 M280 P0 S90             ; Ensure the pin is raised
 
-M400                    ; waiting for previous action to finish
-M913 X70 Y70            ; drop motor current to 70%
-M400                    ; waiting for previous action to finish
+G91                     ; relative positioning
+G1 H2 Z5 F6000          ; lift Z
 
-G91                     ; Relative positioning
-G1 H2 Z5 F3600          ; Lift Z relative to current position
-G1 H1 X-320.5 F3600     ; Move quickly to X and Y axis endstops and stop there (first pass)
-G1 H1 Y-320.5 F3600     ; Move quickly to X and Y axis endstops and stop there (first pass)
+G1 H1 X-260 F1800       ; move quickly to X axis endstop and stop there (first pass)
+G1 H2 X5 F6000          ; go back a few mm
+G1 H1 X-260 F360        ; move slowly to X axis endstop once more (second pass)
 
-G1 H2 X5 Y5 F600        ; Go back a few mm
+M400
 
-G1 H1 X-320.5 F3600     ; Move slowly to X and Y axis endstops once more (second pass)
-G1 H1 Y-320.5 F3600     ; Move slowly to X and Y axis endstops once more (second pass)
-
-M400                    ; waiting for previous action to finish
-M913 X100 Y100          ; return current to 100%
-M400                    ; waiting for previous action to finish
-
-M201 X3000 Y3000        ; Return to full acceleration
+G1 H1 Y303 F1800        ; move quickly to Y axis endstop and stop there (first pass)
+G1 H2 Y5 F6000          ; go back a few mm
+G1 H1 X-5
+M400
+G1 H1 Y303 F360         ; move slowly to Y axis endstop once more (second pass)
 
 G90                     ; Absolute positioning
-G1 X140 Y90 F3600       ; Go to the center of the bed (300x300)
+G1 X90 Y140 F3600       ; Go to the center
 G30                     ; Home Z by probing the bed
 
 G91                     ; Relative positioning
-G1 Z5 F100              ; Lift Z relative to current position
+G1 Z5 F6000             ; Lift Z
 G90                     ; Absolute positioning

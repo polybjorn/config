@@ -1,1 +1,0 @@
-M302 S180 R130 ; Allow extrusion starting from 180°C and retractions already from 130°C
