@@ -29,8 +29,8 @@ M906 X1600 Y1600 Z1600 E1600 I30              ; set motor currents (mA) and moto
 M84 S30                                       ; set idle timeout
 
 ; Axis Limits
-M208 X0 Y0 Z0 S1                              ; set axis minima
-M208 X255 Y297 Z286.5 S0                      ; set axis maxima
+M208 X0 Y0 Z0 S1                              ; set axis min
+M208 X255 Y297 Z286.5 S0                      ; set axis max
 
 ; Endstops
 M574 X1 S1 P"!io0.in"                         ; configure switch-type (e.g. microswitch) endstop for low end on X via pin io0.in
