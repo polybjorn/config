@@ -1,6 +1,6 @@
 ; /opt/dsf/sd/sys/bed.g
 
-G28                         ; home XYZ axis
+G28                         ; home all axes
 
 G30 P0 X271 Y5 Z-99999      ; probe left leadscrew
 G30 P1 X46 Y130 Z-99999     ; probe rear leadscrew

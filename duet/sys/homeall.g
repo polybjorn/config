@@ -23,6 +23,6 @@ G30                     ; Z-probe
 
 ; Outro
 G91                     ; relative positioning
-G1 Z-30 F6000           ; raise heated bed
+G1 Z20 F6000            ; lower heated bed
 G90                     ; absolute positioning
 

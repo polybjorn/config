@@ -10,6 +10,6 @@ G1 H2 X5 F6000          ; reverse X axis
 G1 H1 X-260 F360        ; home X axis, second pass, low endstop
 
 ; Outro
-G1 H2 Z-5 F6000         ; raise heated bed
+G1 H2 Z-10 F6000        ; raise heated bed
 G90                     ; absolute positioning
 

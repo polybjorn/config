@@ -12,6 +12,6 @@ M400                    ; wait for previous moves
 G1 H1 Y303 F360         ; home Y axis, second pass, high endstop
 
 ; Outro
-G1 H2 Z-5 F6000         ; raise heated bed
+G1 H2 Z-10 F6000        ; raise heated bed
 G90                     ; absolute positioning
 
