@@ -2,7 +2,7 @@
 
 ; Intro
 G91                     ; relative positioning
-G1 H2 Z10 F6000         ; lower heated bed
+G1 H2 Z5 F6000          ; lower heated bed
 
 ; Home Y axis
 G1 H1 Y303 F1800        ; home Y axis, first pass, high endstop
@@ -12,6 +12,6 @@ M400                    ; wait for previous moves
 G1 H1 Y303 F360         ; home Y axis, second pass, high endstop
 
 ; Outro
-G1 H2 Z-10 F6000        ; raise heated bed
+G1 H2 Z-5 F6000         ; raise heated bed
 G90                     ; absolute positioning
 

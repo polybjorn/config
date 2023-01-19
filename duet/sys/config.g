@@ -1,5 +1,9 @@
 ; /opt/dsf/sd/sys/config.g
 
+; Version control
+; Duet Web Control   3.4.5
+; RepRap Firmware    3.4.5
+
 ; General preferences
 M111                                          ; debugging off
 G21                                           ; millimeter units
@@ -41,7 +45,7 @@ M671 X296:-85:296 Y-75:110:342 S2             ; Z leadscrew positions
 M950 S0 C"io7.out"                            ; create servo pin 0 for BLTouch
 M558 P9 C"io7.in" H5 F120 T6000               ; set Z probe type to bltouch and the dive height + speeds
 G31 P500 X41 Y0 Z2.567                        ; set Z probe trigger value, offset and trigger height
-M557 X46:245 Y5:287 S20                       ; define mesh grid
+M557 X46:245 Y5:287 S40:50                    ; define mesh grid
 
 ; Heaters
 M308 S0 P"temp0" Y"thermistor" T100000 B3950  ; configure sensor 0 as thermistor on pin temp0

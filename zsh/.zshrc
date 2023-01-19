@@ -1,6 +1,7 @@
 # ${XDG_CONFIG_HOME}/zsh/.zshrc
 
 path+=('/bin')
+path+=('$HOME/.cargo/env')
 path+=('/opt/homebrew/bin')
 path+=('/Applications/Sublime Text.app/Contents/SharedSupport/bin')
 export PATH

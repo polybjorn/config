@@ -2,7 +2,7 @@
 
 ; Intro
 G91                     ; relative positioning
-G1 H2 Z10 F6000         ; lower heated bed
+G1 H2 Z5 F6000          ; lower heated bed
 
 ; Move
 G90                     ; absolute positioning

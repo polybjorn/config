@@ -1,0 +1,3 @@
+; XY linear rails cleaning
+
+G1 X90 Y130 F3600       ; move to center
