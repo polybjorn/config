@@ -20,6 +20,8 @@ alias dcp='sudo docker compose -f ${REPOSITORIES}/private/docker/default-compose
 alias dcb='sudo docker compose -f ${REPOSITORIES}/private/docker/backup-compose.yml --env-file ${REPOSITORIES}/private/docker/variables.yml'
 alias dlog='sudo docker logs'
 alias dcon='sudo docker container'
+alias up='dcp up -d && dcb up -d'
+alias down='dcp down && dcb down'
 
 # Editor
 alias n='nvim'
