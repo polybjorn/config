@@ -6,7 +6,7 @@ G1 H2 Z5 F6000          ; lower heated bed
 
 ; Move
 G90                     ; absolute positioning
-G1 X90 Y130 F3600       ; move to center
+G1 X100 Y175 F3600      ; move to center
 
 ; Outro
 G91                     ; relative positioning
