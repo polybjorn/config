@@ -6,7 +6,7 @@ G1 E-1 F600             ; retract filament
 
 ; Move extruder to safe distance
 G91                     ; relative positioning
-G1 Z10 F6000            ; lower heated bed
+G1 Z5 F6000             ; lower heated bed
 G90                     ; absolute positioning
-G1 X0 Y175 F10000       ; move away
+G1 X0 Y175 F6000        ; move away
 

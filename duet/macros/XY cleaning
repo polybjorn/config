@@ -1,3 +1,18 @@
 ; XY linear rails cleaning
 
-G1 X90 Y130 F3600       ; move to center
+; Safety measure
+if !move.axes[0].homed || !move.axes[1].homed || !move.axes[2].homed
+  G28
+
+; First pass
+G1 H2 Z2 F6000          ; lower heated bed
+G1 X100 Y0 F3600       ; move to left center
+             ; wait 5 seconds
+G1 X100 Y0 F3600       ; move to right center
+             ; wait 5 seconds
+
+; Second pass
+G1 X100 Y0 F3600       ; move to left center
+             ; wait 5 seconds
+G1 X100 Y0 F3600       ; move to right center
+             ; wait 5 seconds

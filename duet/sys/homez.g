@@ -1,8 +1,8 @@
 ; /opt/dsf/sd/sys/homez.g
 
 ; Intro
-M280 P0 S160            ; release alarm and retract probe (BLTouch V3.1)
-M280 P0 S90             ; retract probe (BLTouch V3.1)
+M401                    ; run ~/sys/deployprobe.g macro
+M402                    ; run ~/sys/retractprobe.g macro
 G91                     ; relative positioning
 G1 H2 Z5 F6000          ; lower heated bed
 

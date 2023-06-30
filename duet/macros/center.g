@@ -1,15 +1,10 @@
 ; /opt/dsf/sd/macros/center.g
 
-; Intro
-G91                     ; relative positioning
-G1 H2 Z5 F6000          ; lower heated bed
+; Safety measure
+if !move.axes[0].homed || !move.axes[1].homed || !move.axes[2].homed
+  G28
 
 ; Move
 G90                     ; absolute positioning
 G1 X100 Y175 F3600      ; move to center
-
-; Outro
-G91                     ; relative positioning
-G1 Z-5 F6000            ; raise heated bed
-G90                     ; absolute positioning
 

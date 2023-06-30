@@ -1,8 +1,8 @@
 ; /opt/dsf/sd/sys/homeall.g
 
 ; Intro
-M280 P0 S160            ; alarm release and push pin up (BLTouch)
-M280 P0 S90             ; retract probe (BLTouch V3.1)
+M401                    ; run ~/sys/deployprobe.g macro
+M402                    ; run ~/sys/retractprobe.g macro
 G91                     ; relative positioning
 G1 H2 Z5 F6000          ; lower heated bed
 
@@ -18,6 +18,6 @@ M400                    ; flush moves
 G1 H1 Y303 F360         ; home Y axis, second pass, high endstop
 M400                    ; flush moves
 G90                     ; absolute positioning
-G1 X90 Y175 F10000      ; move to center
+G1 X90 Y175 F6000       ; move to center
 G30                     ; Z-probe
 

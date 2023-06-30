@@ -2,14 +2,14 @@
 
 ; Version control
 ; Duet Web Control   3.4.5
-; RepRap Firmware    3.4.5
+; RepRap firmware    3.4.5
+; PanelDue firmware  3.4.1-5.0i
 
 ; General preferences
-M111                                          ; debugging off
+M111 S0                                       ; debugging off
 G21                                           ; millimeter units
 G90                                           ; send absolute coordinates...
 M83                                           ; ...but relative extruder moves
-M550 P"V-Core Pro 1.3"                        ; set printer name
 M669 K1                                       ; select CoreXY mode
 M404 N1.75                                    ; filament width
 
@@ -34,8 +34,8 @@ M208 X0 Y0 Z0 S1                              ; set axis min
 M208 X248 Y302 Z286.5 S0                      ; set axis max
 
 ; Endstops
-M574 X1 S1 P"!io0.in"                         ; configure switch-type (e.g. microswitch) endstop for low end on X via pin io0.in
-M574 Y2 S1 P"!io1.in"                         ; configure switch-type (e.g. microswitch) endstop for low end on Y via pin io1.in
+M574 X1 S1 P"!io1.in"                         ; configure switch-type (e.g. microswitch) endstop for low end on X via pin io1.in
+M574 Y2 S1 P"!io2.in"                         ; configure switch-type (e.g. microswitch) endstop for low end on Y via pin io2.in
 M671 X296:-85:296 Y-75:110:342 S3             ; Z leadscrew positions
 
 ; Z-Probe
@@ -47,12 +47,12 @@ M557 X0:245 Y3.617:280.617 S40:50             ; define mesh grid
 ; Heaters
 M308 S0 P"temp0" Y"thermistor" T100000 B3950  ; configure sensor 0 as thermistor on pin temp0
 M950 H0 C"out1" T0                            ; create bed heater output on out1 and map it to sensor 0
-M307 H0 R0.788 K0.332:0 D9.53 E1.35 S1 B0     ; enable bang-bang mode for the bed heater and set PWM limit
+M307 H0 R0.766 K0.386:0 D8.84 E1.35 S1 B0     ; enable bang-bang mode for the bed heater and set PWM limit
 M140 H0 R40                                   ; map heated bed to heater 0
 M143 H0 S120                                  ; set temperature limit for heater 0 to 120C
 M308 S1 P"temp1" Y"thermistor" T100000 B4725 C7.060000e-8 ; configure sensor 1 as thermistor on pin temp1
 M950 H1 C"out2" T1                            ; create nozzle heater output on out2 and map it to sensor 1
-M307 H1 R9.609 K0.508:0.341 D3.28 E1.35 S1 B0 ; disable bang-bang mode for heater  and set PWM limit
+M307 H1 R11.119 K0.942:0 D2.96 E1.35 S1 B0    ; disable bang-bang mode for heater  and set PWM limit
 M143 H1 S300                                  ; set temperature limit for heater 1 to 300C
 
 ; Fans
@@ -67,6 +67,9 @@ G10 P0 X0 Y0 Z0                               ; set tool 0 axis offsets
 G10 P0 R0 S0                                  ; set initial tool 0 active and standby temperatures to 0C
 M572 D0 S0.05                                 ; pressure advance (default direct drive value)
 M568 P0 R140                                  ; tool 0 standby temperature 140C
+
+; PanelDue
+M575 P1 S1 B57600                             ; set default serial comms parameters (via pin io0.in)
 
 ; Miscellaneous
 T0                                            ; select first tool
