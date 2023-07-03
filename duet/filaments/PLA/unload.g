@@ -1,6 +1,6 @@
 ; 0:/filaments/PLA/unload.g
 
-M291 P"Please wait while the nozzle is being heated up" R"Unloading PLA" T5 ; Display message
+M291 P"Nozzle is heating up" R"Unloading PLA" T5   ; Display message
 G10 S130                                           ; Heat up the current tool to 130C
 M116                                               ; Wait for the temperatures to be reached
 M291 P"Retracting filament..." R"Unloading PLA" T5 ; Display another message
