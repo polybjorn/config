@@ -2,9 +2,9 @@
 G91               ; relative positioning
 G1 H2 Z2 F6000    ; lower heated bed
 G92 E0            ; zero the extruder
-G1 E-2 F600       ; retract 1mm of filament at 600mm/min
+G1 E-5 F1200      ; retract 5mm of filament at 1200mm/min
 G90               ; absolute positioning
-G1 X5 Y175 F10000 ; move away
+G1 X5 Y175 F6000  ; move away
 
 ; Turn off
 M400              ; flush moves
