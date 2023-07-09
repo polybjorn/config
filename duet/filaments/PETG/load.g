@@ -9,7 +9,7 @@ G1 E10 F100                                     ; Feed 10mm of filament at 100mm
 G1 E50 F300                                     ; Feed 50mm of filament at 300mm/min
 G1 E10 F100                                     ; Feed 10mm of filament at 100mm/min
 G4 P1000                                        ; Wait one second
-G1 E-1 F300                                     ; Retract 1mm of filament at 600mm/min
+G1 E-2 F600                                     ; Retract 2mm of filament at 600mm/min
 M400                                            ; Wait for moves to complete
 M292                                            ; Hide the message
 G10 S0                                          ; Turn off the heater again
