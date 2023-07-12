@@ -2,7 +2,7 @@
 
 ; Filament standby
 M83                     ; relative extruder moves
-G1 E-1 F300             ; retract filament
+G1 E-1 F1200            ; retract filament
 G92 E0                  ; zero the extruder
 
 ; Move extruder to safe distance
