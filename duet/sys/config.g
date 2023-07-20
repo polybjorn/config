@@ -31,18 +31,18 @@ M84 S30                                       ; set idle timeout
 
 ; Axis Limits
 M208 X0 Y0 Z0 S1                              ; set axis min
-M208 X248 Y302 Z286.5 S0                      ; set axis max
+M208 X268 Y304 Z285 S0                        ; set axis max
 
 ; Endstops
 M574 X1 S1 P"!io1.in"                         ; configure switch-type (e.g. microswitch) endstop for low end on X via pin io1.in
 M574 Y2 S1 P"!io2.in"                         ; configure switch-type (e.g. microswitch) endstop for low end on Y via pin io2.in
-M671 X296:-85:296 Y-75:110:342 S3             ; Z leadscrew positions
+M671 X295:-85:295 Y-55:132:363 S6             ; Z leadscrew positions
 
 ; Z-Probe
 M950 S0 C"io7.out"                            ; create servo pin 0 for BLTouch
 M558 P9 C"io7.in" H5 F120 T6000               ; set Z probe type to bltouch and the dive height + speeds
-G31 P500 X0 Y-21.383 Z2.8                     ; set Z probe trigger value, offset and trigger height
-M557 X0:245 Y3.617:280.617 S40:50             ; define mesh grid
+G31 P500 X35.06 Y29.335 Z2.8                  ; set Z probe trigger value, offset and trigger height
+M557 X35.06:270.06 Y29.335:309.335 P8:9       ; define mesh grid
 
 ; Heaters
 M308 S0 P"temp0" Y"thermistor" T100000 B3950  ; configure sensor 0 as thermistor on pin temp0
@@ -52,7 +52,7 @@ M140 H0 R40                                   ; map heated bed to heater 0
 M143 H0 S120                                  ; set temperature limit for heater 0 to 120C
 M308 S1 P"temp1" Y"thermistor" T100000 B4725 C7.060000e-8 ; configure sensor 1 as thermistor on pin temp1
 M950 H1 C"out2" T1                            ; create nozzle heater output on out2 and map it to sensor 1
-M307 H1 R11.119 K0.942:0 D2.96 E1.35 S1 B0    ; disable bang-bang mode for heater  and set PWM limit
+M307 H1 R9.689 K0.748:0 D3.20 E1.35 S1 B0     ; disable bang-bang mode for heater  and set PWM limit
 M143 H1 S300                                  ; set temperature limit for heater 1 to 300C
 
 ; Fans

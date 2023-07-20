@@ -8,7 +8,7 @@ G1 H2 Z5 F6000          ; lower heated bed
 
 ; Home Z axis
 G90                     ; absolute positioning
-G1 X100 Y175 F3600      ; move to center
+G1 X85 Y125 F3600       ; move to center
 G30                     ; Z-probe
 
 ; Outro
