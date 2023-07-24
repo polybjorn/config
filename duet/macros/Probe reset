@@ -1,0 +1,8 @@
+; /opt/dsf/sd/macros/Probe reset
+
+M280 P0 S160     ; reset probe
+G4 P1000         ; wait 1 second
+M401             ; run /sys/deployprobe.g
+G4 P1000         ; wait 1 second
+M402             ; run /sys/retractprobe.g
+

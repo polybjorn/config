@@ -1,0 +1,25 @@
+; /opt/dsf/sd/macros/Y cleaning
+; Y linear rails cleaning 
+
+; safety measure
+if !move.axes[0].homed || !move.axes[1].homed || !move.axes[2].homed
+  G28
+
+G90                    ; absolute positioning
+G1 H2 Z5 F6000         ; lower heated bed
+M400                   ; wait for moves
+M98 P"/macros/Center"  ; run macro
+
+; first pass
+G1 Y0 F3600            ; move left
+G4 P5000               ; wait 5 seconds
+G1 Y304 F3600          ; move right
+G4 P5000               ; wait 5 seconds
+
+; second pass
+G1 Y0 F3600            ; move left
+G4 P5000               ; wait 5 seconds
+G1 Y304 F3600          ; move right
+
+M98 P"/macros/Center"  ; run macro
+
