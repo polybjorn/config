@@ -41,7 +41,7 @@ M671 X295:-85:295 Y-55:132:363 S6             ; Z leadscrew positions
 ; Z-Probe
 M950 S0 C"io7.out"                            ; create servo pin 0 for BLTouch
 M558 P9 C"io7.in" H5 F120 T6000               ; set Z probe type to bltouch and the dive height + speeds
-G31 P500 X35.06 Y29.335 Z3.2                  ; set Z probe trigger value, offset and trigger height
+G31 P500 X35.06 Y29.335 Z1.1                  ; set Z probe trigger value, offset and trigger height
 M557 X35.06:270.06 Y29.335:309.335 P8:9       ; define mesh grid
 
 ; Heaters
@@ -70,6 +70,10 @@ M568 P0 R140                                  ; tool 0 standby temperature 140C
 
 ; PanelDue
 M575 P1 S1 B57600                             ; set default serial comms parameters (via pin io0.in)
+
+; Duet3D LIS3DH v0.2 Accelerometer
+; M955 P0 C"spi.cs1+spi.cs0" I61                ; direct SPI_DB connector, +Z to -Z
+M593 P"ei3" F75                               ; input shaping
 
 ; Miscellaneous
 T0                                            ; select first tool

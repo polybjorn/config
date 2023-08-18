@@ -18,6 +18,6 @@ M400                    ; flush moves
 G1 H1 Y303 F360         ; home Y axis, second pass, high endstop
 M400                    ; flush moves
 G90                     ; absolute positioning
-G1 X85 Y125 F6000       ; move to center
+G1 X85 Y150 F6000       ; move to center
 G30                     ; Z-probe
 

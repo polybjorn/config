@@ -9,7 +9,7 @@ G92 E0                  ; zero the extruder
 G91                     ; relative positioning
 G1 Z10 F6000            ; lower heated bed
 G90                     ; absolute positioning
-G1 X0 Y125 F10000       ; move away
+G1 X0 Y150 F10000       ; move away
 
 ; Turn off
 M400              ; flush moves
