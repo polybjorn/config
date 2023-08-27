@@ -41,7 +41,7 @@ M671 X295:-85:295 Y-55:132:363 S6             ; Z leadscrew positions
 ; Z-Probe
 M950 S0 C"io7.out"                            ; create servo pin 0 for BLTouch
 M558 P9 C"io7.in" H5 F120 T6000               ; set Z probe type to bltouch and the dive height + speeds
-G31 P500 X35.06 Y29.335 Z1.1                  ; set Z probe trigger value, offset and trigger height
+G31 P500 X35.06 Y29.335 Z1.46                 ; set Z probe trigger value, offset and trigger height (positive value = closer to bed)
 M557 X35.06:270.06 Y29.335:309.335 P8:9       ; define mesh grid
 
 ; Heaters
