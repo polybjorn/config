@@ -5,9 +5,9 @@ G10 S255                                           ; Set current tool temperatur
 M116                                               ; Wait for the temperatures to be reached
 M291 P"Feeding filament..." R"Loading PA6CF15" T5  ; Display new message
 M83                                                ; Extruder to relative mode
-G1 E10 F100                                        ; Feed 10mm of filament at 100mm/min
-G1 E30 F200                                        ; Feed 30mm of filament at 200mm/min
-G1 E10 F100                                        ; Feed 10mm of filament at 100mm/min
+G1 E10 F50                                         ; Feed 10mm of filament at 50mm/min
+G1 E30 F100                                        ; Feed 30mm of filament at 100mm/min
+G1 E10 F50                                         ; Feed 10mm of filament at 50mm/min
 G4 P1000                                           ; Wait one second
 G1 E-1 F300                                        ; Retract 1mm of filament at 300mm/min
 M400                                               ; Wait for moves to complete
