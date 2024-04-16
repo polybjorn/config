@@ -4,6 +4,13 @@ path+=('/opt/homebrew/bin')
 path+=('/Applications/Sublime Text.app/Contents/SharedSupport/bin')
 export PATH
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # System-wide configurations
 eval $(thefuck --alias)
 source /usr/local/share/chruby/chruby.sh
