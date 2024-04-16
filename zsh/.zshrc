@@ -12,25 +12,25 @@ source ${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh
 
 # Initialize Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
-
-# Oh My Zsh Plugins
+ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   git
   zsh-completions
   zsh-autosuggestions
   zsh-syntax-highlighting
+  sudo
+  fzf
+  iterm2
+  copyfile
+  copypath
 )
+
+# iTerm2 shell integration setting - configure before sourcing Oh My Zsh
+zstyle :omz:plugins:iterm2 shell-integration yes
+
+# Source Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
-# Theme configuration
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Custom alias and additional scripts
+# Custom aliases and additional scripts
 source ${XDG_CONFIG_HOME}/zsh/.aliases
-source ${ZDOTDIR}/plugins/fzf/fzf.zsh
-source ${ZDOTDIR}/plugins/.iterm2_shell_integration.zsh
 source ${ZDOTDIR}/plugins/.p10k.zsh
-source ${ZDOTDIR}/plugins/copyfile.zsh
-source ${ZDOTDIR}/plugins/copypath.zsh
-source ${ZDOTDIR}/plugins/sudo.zsh
