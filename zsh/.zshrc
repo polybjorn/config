@@ -1,3 +1,5 @@
+# ${XDG_CONFIG_HOME}/zsh/.zshrc
+
 # Set PATH
 path+=('/bin')
 path+=('/opt/homebrew/bin')
@@ -18,7 +20,7 @@ source /usr/local/share/chruby/auto.sh
 source ${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh
 
 # Initialize Oh My Zsh
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.config/zsh/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   git
@@ -36,7 +38,7 @@ plugins=(
 zstyle :omz:plugins:iterm2 shell-integration yes
 
 # Source Oh My Zsh
-source $ZSH/oh-my-zsh.sh
+source ${XDG_CONFIG_HOME}/zsh/oh-my-zsh.sh
 
 # Custom aliases and additional scripts
 source ${XDG_CONFIG_HOME}/zsh/.aliases
