@@ -17,7 +17,6 @@ fi
 eval $(thefuck --alias)
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-source ${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh
 
 # Initialize Oh My Zsh
 export ZSH="$HOME/.config/zsh/.oh-my-zsh"
@@ -38,8 +37,8 @@ plugins=(
 zstyle :omz:plugins:iterm2 shell-integration yes
 
 # Source Oh My Zsh
-source ${XDG_CONFIG_HOME}/zsh/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 # Custom aliases and additional scripts
-source ${XDG_CONFIG_HOME}/zsh/.aliases
-source ${ZDOTDIR}/plugins/.p10k.zsh
+source ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.aliases
+source ${ZDOTDIR:-$HOME/.config/zsh}/plugins/.p10k.zsh
