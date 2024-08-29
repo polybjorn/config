@@ -18,6 +18,9 @@ eval $(thefuck --alias)
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
+# Ruby Version Manager
+rbenv init
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.config/zsh/.oh-my-zsh
 
