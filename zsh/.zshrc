@@ -17,8 +17,8 @@ fi
 
 # System-wide configurations
 eval $(thefuck --alias)
-eval $(rbenv init - zsh)
-eval $(nodenv init - zsh)
+eval "$(rbenv init - zsh)"
+eval "$(nodenv init - zsh)"
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
