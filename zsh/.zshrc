@@ -4,6 +4,8 @@
 path+=('/bin')
 path+=('/opt/homebrew/bin')
 path+=('/Applications/Sublime Text.app/Contents/SharedSupport/bin')
+path+=("$HOME/.rbenv/bin")
+path+=("$HOME/.nodenv/shims")
 export PATH
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -15,12 +17,10 @@ fi
 
 # System-wide configurations
 eval $(thefuck --alias)
+eval $(rbenv init - zsh)
+eval $(nodenv init - zsh)
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-
-# Ruby Version Manager
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - zsh)"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.config/zsh/.oh-my-zsh
