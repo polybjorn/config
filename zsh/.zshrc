@@ -2,10 +2,10 @@
 
 # Set PATH
 path+=("$HOME/.nodenv/shims")
+path+=("$HOME/.rbenv/bin")
 path+=('/bin')
 path+=('/opt/homebrew/bin')
 path+=('/Applications/Sublime Text.app/Contents/SharedSupport/bin')
-path+=("$HOME/.rbenv/bin")
 export PATH
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
